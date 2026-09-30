@@ -334,6 +334,7 @@ const archive = {
                 description: "이번 명절에 받을 돈이 4,710,000원쯤 됩니다."
             }
         ]
+    }
 };
 
 const hayBox = document.querySelector("#hay");
