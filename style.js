@@ -306,6 +306,34 @@ const archive = {
                 description: "르네 마그리트의 그림과 계단식 아파트의 계단 코너는 나의 학창 시절 공포로 남아있다."
             }
         ]
+    },
+    
+        "260919": {
+        topic: "추석",
+        hay: [
+            {
+                img: "img/260830_hay.jpg",
+                title: "9회말 2아웃",
+                category: "Poster",
+                description: "관람 등급: 야구팬 심장주의."
+            }
+        ],
+        soy: [
+            {
+                img: "img/260830_soy.jpg",
+                title: "잔혹동화",
+                category: "Poster",
+                description: "어른들을 위한 동화 헨젤과 그레텔"
+            }
+        ],
+        seh: [
+            {
+                img: "img/260919_seh.jpg",
+                title: "NAGGING RECEIPT",
+                category: "Poster",
+                description: "이번 명절에 받을 돈이 4,710,000원쯤 됩니다."
+            }
+        ]
     }
 };
 
@@ -1730,4 +1758,8 @@ function removeHoverClone() {
 
     hoverTarget = null;
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b1731d34f0bc0849c1aad301e8a17a09ea346e41
