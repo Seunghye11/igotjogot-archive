@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이곳저곳</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="modal.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="style.js" defer></script>
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'ugi5uji',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
+</head>
+
+<body>
+    <header id="menuBar">
+        <div class="infoBtn">ⓘ</div>
+        <div id="aboutModal">
+            <div class="aboutInner">
+                <h3>A DESIGN ARCHIVE BY THREE DESIGNERS</h3>
+                <p class="aboutText">
+                    '이'씨 성을 가진 세 명의 디자이너가 모여 이곳저곳으로 흘러가는 결과를 한곳에 모은 아카이브입니다.
+                    매월 하나의 주제를 선정하고 각자의 방식으로 해석해 산출물을 제작합니다.
+                </p>
+                <div class="aboutLocation">
+                    <p>(LEFT)</p>
+                    <p>(CENTER)</p>
+                    <p>(RIGHT)</p>
+                </div>
+                <div class="aboutMember">
+                    <a href="" target="_blank"><h4>HAYOUNG LEE</h4></a>
+                    <a href="" target="_blank"><h4>SOYOUNG LEE</h4></a>
+                    <a href="" target="_blank"><h4>SEUNGHYE LEE</h4></a>
+                </div>
+            </div>
+        </div>
+        <img class="logo_img" src="img/logo_gray.png" alt="">
+    </header>
+
+    <main id="main">
+        <nav id="topicBox">
+            <ul id="topicList"></ul>
+        </nav>
+        <section class="member" id="hay"></section>
+        <section class="member" id="soy"></section>
+        <section class="member" id="seh"></section>
+    </main>
+
+</body>
+
+</html>

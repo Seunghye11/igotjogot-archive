@@ -1,0 +1,411 @@
+
+@font-face {
+    font-family: 'SUIT';
+    src: url('SUIT-Variable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+AC00-D7A3;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    font-family: "articulat-cf", "SUIT", sans-serif;
+    height: 100dvh;
+}
+
+/*메뉴바*/
+#menuBar {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 100vw;
+    height: auto;
+
+    z-index: 10002;
+    pointer-events: none;
+}
+
+.logo_img {
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: clamp(180px, 30vw, 450px);
+    margin: 0;
+    pointer-events: auto;
+    cursor: pointer;
+    z-index: 10002;
+}
+
+@media (hover: hover) {
+    .logo_img:hover {
+        transform: translateX(-50%) rotate(-2deg) translateY(-2px);
+    }
+}
+
+/* ABOUT MODAL */
+
+#aboutModal {
+    position: fixed;
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: 
+    opacity 0.35s ease,
+    visibility 0.35s ease;
+
+    z-index: 10001;
+}
+
+#aboutModal.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* 내용 전체 */
+
+.aboutInner {
+    width: min(700px, 80vw);
+    text-align: center;
+
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.aboutInner h3{
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #3a3a3a;
+}
+
+/* 설명 */
+
+.aboutText {
+    width: 100%;
+
+    font-size: clamp(16px, 1.3vw, 22px);
+    line-height: 1.5;
+
+    margin-bottom: clamp(50px, 6vw, 80px);
+
+    word-break: keep-all;
+}
+
+/* LEFT / CENTER / RIGHT */
+.aboutLocation {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    text-align: center;
+
+    font-size: clamp(14px, 1.1vw, 20px);
+    line-height: 1.0;
+}
+
+/* 이름 */
+.aboutMember {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    text-align: center;
+
+    font-size: clamp(15px, 1.3vw, 20px);
+    line-height: 1.5;
+
+    margin-top: 5px;
+}
+
+.aboutMember h4 {
+    font-weight: 600;
+}
+
+.aboutMember h4:hover {
+    transform: rotate(-3deg) translateY(-2px);
+}
+
+
+.aboutMember a{
+    color: #3a3a3a;
+    text-decoration: none;
+}
+
+
+/*메인*/
+#main {
+    display: flex;
+    height: 100vh;
+    padding-top: 0;
+    position: relative;
+    z-index: 1;
+}
+
+#topicBox {
+    width: 20vw;
+    min-width: 180px;
+    flex-shrink: 0;
+    padding-top: clamp(150px, 10vh, 200px);
+    padding-left: 20px;
+    border-right: 1px solid #e9e9e9;
+}
+
+#topicBox ul {
+    list-style: none;
+}
+
+/* ========================== */
+/* 연도 */
+/* ========================== */
+
+.yearGroup {
+    list-style: none;
+    width: 100%;
+    margin: 0 0 10px 0;
+}
+
+.year {
+    display:flex;
+    align-items:center;
+    width:max-content;
+    height:auto;
+    margin:0 0 5px 0;
+    font-size:1.3rem;
+    font-weight:600;
+    line-height:1.2;
+    color:#3a3a3a;
+    cursor:pointer;
+}
+
+.year img {
+    display:block;
+    width:48px;
+    height:auto;
+    object-fit:contain;
+}
+
+.yearLabel {
+    display:block;
+    margin-left:5px;
+    white-space:nowrap;
+    opacity:0;
+    transform:translateX(-8px);
+    transition:opacity .25s ease, transform .25s ease;
+}
+
+/* 마우스를 올렸을 때 */
+
+.year:hover .yearLabel {
+    opacity:1;
+    transform:translateX(0);
+}
+
+/* 클릭해서 연도가 열린 상태 */
+.yearGroup.open .yearLabel {
+    opacity:1;
+    transform:translateX(0);
+}
+
+/* ========================== */
+/* 날짜 목록 */
+/* ========================== */
+.yearDates {
+    display: none;
+    list-style: none;
+    margin: 5px 0 8px 8px;
+    padding: 0;
+}
+
+.yearGroup.open .yearDates {
+    display: block;
+}
+
+/* ========================== */
+/* 날짜 */
+/* ========================== */
+.dateItem {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    margin: 0 0 8px 0;
+    padding: 0;
+    line-height: 1.2;
+    cursor: pointer;
+}
+
+.dateItem .date {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #7e7e7e;
+}
+
+.dateItem:hover .topic {
+    width:auto;
+    margin-left:10px;
+    opacity:1;
+    transform:translateX(0);
+}
+
+.dateItem:hover .date {
+    color: #3a3a3a;
+    font-weight: 500;
+}
+
+/* ========================== */
+/* PC : 날짜 오른쪽에 주제 */
+/* ========================== */
+
+.dateItem .topic {
+    display: block;
+    width: 0;
+    max-width: none;
+    margin: 0;
+
+    font-size: 1.1rem;
+    line-height: 1.2;
+    font-weight: 800;
+    color: #3a3a3a;
+    white-space: nowrap;
+
+    overflow: hidden;
+    opacity: 0;
+
+    transform: translateX(-8px);
+    transition:
+        width 0.3s ease,
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.dateItem.active .topic {
+    width: auto;
+    margin-left: 10px;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.dateItem.active .date {
+    color: #3a3a3a;
+    font-weight: 600;
+}
+
+
+/*이미지 썸넬들*/
+.member {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: visible;
+    border-right: 1px solid #e9e9e9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scrollbar-width: none;
+    position: relative;
+    z-index: 1;
+}
+
+.member:last-child {
+    border-right: none;
+}
+
+/*스크롤바 숨기기*/
+.member::-webkit-scrollbar {
+    display: none;
+}
+
+.work {
+    position: relative;
+    z-index: 1;
+    width: clamp(220px, 80%, 380px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.work img {
+    width: 90%;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+    border: 1px solid transparent;
+}
+
+.work img:hover {
+    transform: scale(1.02);
+    border-color: #e9e9e9;
+}
+
+/*토글*/
+.desc {
+    color: #262626;
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
+    max-height: 0;
+    word-break: keep-all;
+    overflow: hidden;
+    line-height: 1.4;
+    font-weight: 450;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.25s ease, margin 0.3s ease;
+}
+
+.desc.active {
+    margin-top: 15px;
+    opacity: 1;
+    max-height: 500px;
+}
+
+.desc h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 650;
+    font-size: 1.1rem;
+    color: #262626;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.scrollTrack {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    flex-shrink: 0;
+    will-change: transform;
+    position: relative;
+}
+
+.scrollTrack:has(.work:hover) {
+    z-index: 10003;
+}

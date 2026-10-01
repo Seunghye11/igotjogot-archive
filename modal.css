@@ -1,0 +1,153 @@
+#main_container {
+    display: flex;
+    flex-direction: column; /* 세로부터 쌓기 */
+    flex-wrap: wrap; /* 세로 공간 넘치면 다음 열로 */
+    height: 80vh; /* 세로 공간 제한 */
+    align-content: flex-start; /* 열들이 왼쪽부터 */
+    gap: 20px;
+    padding: 20px;
+}
+
+.infoBtn {
+    position: fixed;
+    left: 25px;
+    top: 30px;
+
+    font-size: 1.7rem;
+    line-height: 1;
+    font-weight: 500;
+    color: #3a3a3a;
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 10003;
+
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.infoBtn:hover {
+    transform: rotate(-4deg) translateY(-3px);
+}
+
+/* 부모 세로 정렬 */
+.ms1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* 이미지 */
+.icon {
+    width: 2vw;
+    cursor: pointer;
+    margin-bottom: 8px; /* 버튼과 간격 */
+}
+
+/* 버튼 */
+.modalBtn {
+    font-size: 2%;
+    cursor: pointer;
+    display: block;
+}
+
+/* 모달 기본 */
+.modal {
+    display: none;
+    position: fixed;
+
+    top: 0;
+    right: 0;
+
+    width: min(450px, 30vw);
+    height: 100vh;
+
+    background: #c9cbca;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+    overflow: hidden;
+    z-index: 8000;
+}
+
+/* 모달 콘텐츠 */
+.modal-content {
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+
+    margin: 0;
+    background: #c9cbca;
+
+    text-align: left;
+    overflow-y: auto;
+
+    border: 2px solid #fff;
+    border-bottom: 2px solid #888;
+    border-radius: 3px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* 헤더 */
+.modal-header {
+    background:linear-gradient(to bottom,#000080,#0000cd);
+    color:white;
+    padding:5px 10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-weight:bold;
+    cursor:grab;
+}
+
+.modal-header .close {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-header .close:hover {
+    color: rgb(0, 0, 0);
+}
+
+.modal-title {
+    font-weight: 400;
+}
+
+/* 모달 본문 */
+.modal-body{
+    margin:10px;
+    background:#c9cbca;
+    line-height:1.4;
+}
+
+.modal-body::selection{
+    background:yellow;
+}
+
+button.modalBtn {
+    margin-top: 5px;
+    background-color: #dcdcdc00;
+    border: none;
+    cursor: auto;
+    font-size: 1rem;
+    color: #c9cbca;
+    display: block;
+}
+
+/* 모달 기본 */
+.window_header {
+    background-color: #000076;
+}
+
+.close {
+    position: absolute;
+
+    background: #c9cbca;
+    color: #2d2d2d;
+    border-color: #000;
+    box-shadow: 0 0 0 2px #616161;
+
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 99999;
+}
