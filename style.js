@@ -388,7 +388,6 @@ for (const date in archive) {
             e.stopPropagation();
             yearItem.classList.toggle("open");
         });
-
     }
 
     // 날짜
@@ -1757,9 +1756,4 @@ function removeHoverClone() {
 
 
     hoverTarget = null;
-
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> b1731d34f0bc0849c1aad301e8a17a09ea346e41
+};
