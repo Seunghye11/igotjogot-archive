@@ -320,10 +320,10 @@ const archive = {
         ],
         soy: [
             {
-                img: "img/260830_soy.jpg",
-                title: "잔혹동화",
+                img: "img/260919_soy.jpg",
+                title: "추석",
                 category: "Poster",
-                description: "어른들을 위한 동화 헨젤과 그레텔"
+                description: "추석에만 들을 수 있는 이야기"
             }
         ],
         seh: [
@@ -332,6 +332,34 @@ const archive = {
                 title: "NAGGING RECEIPT",
                 category: "Poster",
                 description: "이번 명절에 받을 돈이 4,710,000원쯤 됩니다."
+            }
+        ]
+    },
+
+    "261025": {
+        topic: "Halloween",
+        hay: [
+            {
+                img: "img/260830_hay.jpg",
+                title: "9회말 2아웃",
+                category: "Poster",
+                description: "관람 등급: 야구팬 심장주의."
+            }
+        ],
+        soy: [
+            {
+                img: "img/260919_soy.jpg",
+                title: "추석",
+                category: "Poster",
+                description: "추석에만 들을 수 있는 이야기"
+            }
+        ],
+        seh: [
+            {
+                img: "img/261025_seh.jpg",
+                title: "Pumkin's family",
+                category: "Poster",
+                description: "Jack O' lantern의 역사는 이들이 설명해 줄 것이다."
             }
         ]
     }
